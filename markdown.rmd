@@ -30,7 +30,7 @@ These results were generated on `Windows 10` using:
 `RStudio Version 1.1.456`
 
 &nbsp;
-`R Version 3.5.1`.
+`R Version 3.5.1`
 
 2. Download the analysis files
 
