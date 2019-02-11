@@ -1,7 +1,3 @@
----
-output: github_document
----
-
 <!-- rmarkdown v1 -->
 
 
@@ -26,7 +22,11 @@ These results were generated on `Windows 10`  using `RStudio Version 1.1.456` an
 
 ### Contact
 Guy A. Prochilo, PhD Candidate, Melbourne School of Psychological Sciences
+&nbsp;
 University of Melbourne
+&nbsp;
 Parkville, VIC 3010
-guy.prochilo@gmail.com 
+&nbsp;
+guy.prochilo@gmail.com
+&nbsp;
 https://www.guyprochilo.com
