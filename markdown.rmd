@@ -237,6 +237,8 @@ r.confidence(0.32,26,twotailed = FALSE)
 r.confidence(0.49,17,twotailed = TRUE)
 ```
 
+### Critical _r_ computations
+
 #### Critical _r_ value for a study with _N_ = 17
 
 ```{r eval=TRUE}
