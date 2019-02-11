@@ -1,5 +1,10 @@
 ---
 title: "An Extended Commentary On Post-Publication Peer Review In Organizational Neuroscience"
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
 author: "Guy A. Prochilo"
 date: "February 10, 2019"
 output:
