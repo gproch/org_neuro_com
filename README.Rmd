@@ -12,6 +12,12 @@ knitr::opts_chunk$set(
 
 ## Research compendium for: An Extended Commentary On Post-Publication Peer Review In Organizational Neuroscience.
 
+### Compendium DOI
+
+http://dx.doi.org/xxxxxxx
+
+The files at the URL above will generate the results as found in the paper. This URL will be updated at the completion of the project. The files hosted at https://github.com/gprochilo/org_neuro_com are the development versions and may have changed since the report was published.
+
 ### Author of this repository:
 Guy A. Prochilo (guy.prochilo@gmail.com)
 ### Under peer-review in: 
