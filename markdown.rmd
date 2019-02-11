@@ -34,7 +34,7 @@ These results were generated on `Windows 10` using:
 
 2. Download the analysis files
 
-Download or clone the git repository for this analysis: https://github.com/gproch/org_neuro_com/
+Download or clone the git repository for this analysis: https://github.com/gprochilo/org_neuro_com
 &nbsp;
 
 The files within this repository must be in a single directory on your operating system to reproduce the analyses for this publication.
