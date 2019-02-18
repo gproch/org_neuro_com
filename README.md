@@ -1,7 +1,7 @@
 <!-- rmarkdown v1 -->
 
 
-[![Last-changedate](https://img.shields.io/badge/last%20change-2019--02--11-brightgreen.svg)](https://github.com/adamhsparks/rice.awd.pests/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2019--02--18-brightgreen.svg)](https://github.com/adamhsparks/rice.awd.pests/commits/master)
 [![minimal R version](https://img.shields.io/badge/R%3E%3D-3.5.1-brightgreen.svg)](https://cran.r-project.org/)
 
 ## Research compendium for: An Extended Commentary On Post-Publication Peer Review In Organizational Neuroscience.
