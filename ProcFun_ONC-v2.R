@@ -215,18 +215,6 @@ r.confidence <- function(r, n, twotailed = TRUE, pr = TRUE) {
 
 #-------------------------------------------------------------------------------
 
-# zou <- cocor.dep.groups.overlap(r.jk=.36, 
-#                          r.jh=.26, 
-#                          r.kh=.39, 
-#                          n=50, 
-#                          alternative="two.sided", 
-#                          alpha=0.05, 
-#                          conf.level=0.95, 
-#                          null.value=0,
-#                          return.htest = TRUE)$zou2007
-
-#-------------------------------------------------------------------------------
-
 zou.test <-function(r.jk, 
                     r.jh, 
                     r.kh, 
