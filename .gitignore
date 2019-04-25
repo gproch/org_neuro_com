@@ -1,3 +1,9 @@
+# Exclude plots generated on my local OS from GitHub
+plots/*.eps
+plots/*.png
+
+# Exclude these also
+
 .Rproj.user
 .Rhistory
 .RData

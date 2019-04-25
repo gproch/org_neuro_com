@@ -1,12 +1,13 @@
 ---
 title: "An Extended Commentary On Post-Publication Peer Review In Organizational Neuroscience"
+subtitle: "In press at Meta-Psychology"
 knit: (function(input_file, encoding) {
   out_dir <- 'docs';
   rmarkdown::render(input_file,
  encoding=encoding,
  output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
 author: "Guy A. Prochilo"
-date: "February 18, 2019"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   html_document:
     toc: true
@@ -18,34 +19,34 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This R Markdown document reproduces the results found in the above publication.
+* This R Markdown document reproduces the analyses found in the above publication and provides instructions for independent reproduction. 
+* A pre-print of this publication can be found at: https://psyarxiv.com/hv3rm
+* Click [here](https://osf.io/ayuxz/) for a full history of the submission to [_Meta-Psychology_](https://open.lnu.se/index.php/metapsychology/about)
 
-## Instructions
 
-1. Install R and RStudio
+# Instructions
 
-These results were generated on `Windows 10` using:
+Follow these instructions to independently reproduce all analyses in the above publication via an R Markdown file.
 
-&nbsp;
-`RStudio Version 1.1.456`
+**1. Install requisite software:**
 
-&nbsp;
-`R Version 3.5.1`
+* R (v-3.5.1)
+* R Studio (v-1.1.463)
 
-2. Download the analysis files
+_Note_: These analyses were performed using using Windows 10 and have not been tested on Unix systems.
 
-Download or clone the git repository for this analysis: https://github.com/gprochilo/org_neuro_com
-&nbsp;
+**2. Download the analysis pipeline:**
 
-The files within this repository must be in a single directory on your operating system to reproduce the analyses for this publication.
+* Download or clone the git repository for this analysis: https://github.com/gprochilo/org_neuro_com
+* The files within this repository must be saved to a single directory
 
-3. Open `analysis.Rproj`
+**3. Open the R Studio project file:**
 
-This file is located in the directory where you have saved the `org_neuro_com` repository. This will open an `RStudio` session in the current working directory.
+* Open `analysis.Rproj` to begin an R Studio session in your current working directory
 
-4. Install the required packages
+**4. Install the required packages**
 
-This analysis pipeline requires you to install the following packages.
+* This analysis pipeline requires the following packages:
 
 ```{r eval=FALSE}
 install.packages("ggplot2")
@@ -59,64 +60,68 @@ install.packages("reshape2")
 install.packages("userfriendlyscience")
 install.packages("devtools")
 install.packages("SuppDists")
+install.packages("here")
 ```
 
-The cannonball package can be installed from Github after installing devtools.
+* The cannonball package can be installed from Github after installing devtools.
 
 ```{r eval=FALSE}
 install_github("janhove/cannonball")
 ```
 
-5. Run markdown.rmd
+**5. Knit the R Markdown file to reproduce all analyses:**
 
-Open `markdown.rmd` in `RStudio` and select **Knit**. This will reproduce this document and all associated analyses. 
+* Open `markdown.rmd` in R Studio and select **Knit**
+* This action will reproduce this document and all associated analyses 
 
-## Prepare R Workspace
+# Prepare R Workspace
 
-1. Load the required packages
+The scripts below are evaluated by R Markdown to reproduce all analyses.
 
-R Markdown will load and attach all required packages.
+**1. Load and attach required packages**
+
+* R Markdown will load and attach the required packages by sourcing the `libraries.R` file
 
 ```{r results='hide', message=FALSE, warning=FALSE}
 source("libraries.R")
 ```
 
-2. Source the analysis scripts
+**2. Source the analysis scripts**
 
-All scripts for reproducing the results in this publication can be found in `prochFun_ONC.R` (Prochilo functions for Organizational Neuroscience Commentary). R Markdown will source this file so that all scripts are loaded into R. 
+* R Markdown will source the analysis script file for this project: `ProchFun_ONC-v2.R`
+* This file includes all scripts required for reproducing all analyses
 
 ```{r eval=TRUE}
-source("prochFun_ONC.R")
+source("ProcFun_ONC-v2.R")
 ```
 
-## Figures
+# Reproduce Figures
 
-### Figure 1
+## Figure 1
 
-Reproduce the dot plot presented in Figure 1. 
+* Reproduce the dot plot presented in Figure 1
 
-```{r, fig.width=7,fig.height=4}
-bean.plot(csv.name = "citeData.csv", keep.cite = c(
-  "Waldman et al. (2011)",
-  "Boyatzis et al. (2012)",
-  "Peterson et al. (2008)",
-  "Waldman et al. (2013a; 2015)",
-  "Kim and James (2015)"))
+```{r, out.width='100%',fig.height=3}
+cite.plot()
 ```
 
-### Figure 2
+## Figure 2
 
-Reproduce scatterplots consistent with _r_ = 0.36 and _N_ = 50. Note 1: the software outputs _N_ rather than _df_ in the title. This has been adjusted in the associated publication. Note 2: the software outputs 16 scatterplots. Eight scatterplots were included in the final publication due to space constraints. 
+* Reproduce scatterplots consistent with _r_ = 0.36 and _N_ = 50
+* Note 1: The software outputs _N_ rather than _df_ in the title (this has been adjusted in the associated publication)
+* Note 2: While the software outputs 16 scatterplots, eight scatterplots were included in the final publication due to space constraints
 
 ```{r, fig.width=10,fig.height=10}
 plot.r(r = 0.36, n = 50, plot = TRUE)
 ```
 
-### Figure 3
+## Figure 3
 
-Reproduce Figure 3A and Figure 3B. Figure 3A (upper) is graphical representation of _r_ = .26 and _r_ = .36 and their 95% CIs with a sample of _N_ = 50. Figure 3B (lower) is the results of Zou's test. 
+* Reproduce Figure 3A and Figure 3B
+* Figure 3A (upper) is graphical representation of _r_ = .26 and _r_ = .36 and their 95% CIs with a sample of _N_ = 50
+* Figure 3B (lower) is the results of Zou's test. 
 
-```{r eval = TRUE}
+```{r, out.width='100%',fig.height=5}
 zou.test(
   r.jk=.36, 
   r.jh=.26, 
@@ -130,39 +135,43 @@ zou.test(
 )
 ```
 
-### Figure 4
+## Figure 4
 
-Reproduce the simulation presented in Figure 4 and its associated dataset. The code in this R Markdown file uses a CSV file that contains the data generated by the simulation instead of running the simulation itself. To run the full simulation you may run the following scripts outside of the R Markdown environment:
-&nbsp;
-`source("libraries.R")`
-`source("prochFun_ONC.R")`
-`errorPlot(comparisons = 50,sampleSize = 17,reps = 10000,plotname = "errorPlot")`. 
-&nbsp;
-Note: The above simulation can take 3-5 minutes.
+* Reproduce the simulation presented in Figure 4 and its associated dataset. 
+* The code in this R Markdown file uses a CSV file that contains the data generated by the simulation instead of running the simulation itself
+* To run the full simulation you may run the following scripts outside of the R Markdown environment (runtime approx. 2-3 min):
 
-```{r, fig.width=8,fig.height=4}
-errorPlot.lazy("figure_4_data.csv")
+```{r, eval = FALSE}
+source("libraries.R")
+source("ProchFun_ONC-v2.R")
+errorPlot(comparisons = 50,sampleSize = 17,reps = 10000,plotname = "errorPlot", n.comparison.label = 20)
 ```
 
-## Waldman et al. (2011a)
+* The following code generates Figure 4 using a CSV file of data saved from the above simulation:
 
-### Confidence interval computations
+```{r, out.width='100%',fig.height=4}
+errorPlot.lazy("figure_4_data.csv", n.comparison.label = 20)
+```
 
-#### _r_(48) = 0.36, _p_ < .05
+# Waldman et al. (2011a)
+
+## Confidence interval computations
+
+### _r_(48) = 0.36, _p_ < .05
 
 ```{r eval=TRUE}
 r.confidence(0.36,50,twotailed = TRUE)
 ```
 
-####  _r_(48) = 0.26, _p_ < .10
+###  _r_(48) = 0.26, _p_ < .10
 
 ```{r eval=TRUE}
 r.confidence(0.26,50,twotailed = TRUE)
 ```
 
-### Zou's test
+## Zou's test
 
-```{r, fig.width=7,fig.height=5}
+```{r eval=TRUE}
 zou.test(
   r.jk=.36, 
   r.jh=.26, 
@@ -177,49 +186,49 @@ zou.test(
 )
 ```
 
-### Precision for planning
+## Precision for planning
 
-#### _r_ = 0.36 and margin of error = 0.18 with 95% confidence
+### _r_ = 0.36 and margin of error = 0.18 with 95% confidence
 
 ```{r eval=TRUE}
 pwr.confIntR(r = 0.36, w = 0.18, conf.level = 0.95)
 ```
 
-#### _r_ = 0.09 and margin of error = 0.045 with 95% confidence
+### _r_ = 0.09 and margin of error = 0.045 with 95% confidence
 
 ```{r eval=TRUE}
 pwr.confIntR(r = 0.09, w = 0.045, conf.level = 0.95)
 ```
 
-## Waldman et al. (2013a)
+# Waldman et al. (2013a)
 
-### Confidence interval computations
+## Confidence interval computations
 
-#### _r_(24) = 0.32, _p_ < .05 (Two-tailed test)
+### _r_(24) = 0.32, _p_ < .05 (Two-tailed test)
 
 ```{r eval=TRUE}
 r.confidence(0.32,26,twotailed = TRUE)
 ```
 
-#### _r_(24) = 0.32, _p_ < .05 (One-tailed test)
+### _r_(24) = 0.32, _p_ < .05 (One-tailed test)
 
 ```{r eval=TRUE}
 r.confidence(0.32,26,twotailed = FALSE)
 ```
 
-## Kim and James (2015)
+# Kim and James (2015)
 
-### Confidence interval computations
+## Confidence interval computations
 
-#### _r_(48) = 0.49, _p_ < .05
+### _r_(48) = 0.49, _p_ < .05
 
 ```{r eval=TRUE}
 r.confidence(0.49,17,twotailed = TRUE)
 ```
 
-### Critical _r_ computations
+## Critical _r_ computations
 
-#### Critical _r_ value for a study with _N_ = 17
+### Critical _r_ value for a study with _N_ = 17
 
 ```{r eval=TRUE}
 critical.r(n = 17, alpha = .05, twotailed = TRUE)

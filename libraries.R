@@ -1,3 +1,4 @@
+# Libraries required for analysis of data and plotting of results
 library(ggplot2)
 library(scales)
 library(ggrepel)
@@ -11,3 +12,4 @@ library(cannonball)
 library(MASS)
 library(userfriendlyscience)
 library(SuppDists)
+library(here)
