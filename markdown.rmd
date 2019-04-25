@@ -6,7 +6,7 @@ knit: (function(input_file, encoding) {
   rmarkdown::render(input_file,
  encoding=encoding,
  output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
-author: "Guy A. Prochilo"
+author: "[Guy A. Prochilo](https://www.guyprochilo.com)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   html_document:
