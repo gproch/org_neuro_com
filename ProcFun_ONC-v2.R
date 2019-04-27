@@ -29,7 +29,7 @@
 # 
 # Cite as:
 # Prochilo, G. A. (2019). ProcFun_ONC-v2.R: R functions for organizational neuroscience commentary. 
-# Retrieved from https://github.com/gprochilo
+# Retrieved from https://github.com/gprochilo/org_neuro_com.
 
 #-------------------------------------------------------------------------------
 
